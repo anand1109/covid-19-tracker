@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <a href="index.html"></a>
+    <title>World Wide Corona</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: white;
+
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            text-align: center;
+            padding: 8px;
+        }
+
+        tr:nth-child(even){background-color: #f2f2f2}
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+            font-size: 14px;
+        }
+
+        /*search box*/
+        .topnav {
+            overflow: hidden;
+            /*background-color: black;*/
+            margin: 5px;
+            box-shadow: 10px 10px white;
+        }
+        .topnav input[type=text] {
+            padding: 6px;
+            margin-top: 8px;
+            margin-right: 16px;
+            font-size: 17px;
+            outline: none;
+            color: black;
+
+
+        }
+
+        input {
+            border-radius: 30px 30px 30px 30px;
+            box-shadow:0px 1px 1px 1px #e5e5e5;
+            border-color: skyblue;
+            outline: none;
+        }
+        input:hover{
+            color: lightblue;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $("#myInput").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $(".tr").filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
+
+</head>
+<body>
+<div class="topnav">
+    <input id="myInput" type="text" placeholder="Type Country Name..">
+</div>
+
+<!--
+<input oninput="w3.filterHTML('#id01', '.tr', this.value)">
+-->
+
+
+
+<table id="id01">
+    <tr>
+        <th>COUNTRY</th>
+        <th>TOTAL CASES</th>
+        <th>TODAY CASES</th>
+        <th>DEATHS</th>
+        <th>RECOVERED</th>
+        <th>ACTIVE</th>
+    </tr>
+
+    <tbody class="row"></tbody>
+
+</table>
+
+
+<script>
+
+
+        let xhr = new XMLHttpRequest();
+        xhr.open('GET', "https://coronavirus-19-api.herokuapp.com/countries", true);
+        xhr.send();
+        xhr.onload = () => {
+            if (xhr.status === 200){
+                let data = xhr.responseText;
+                let stats = JSON.parse(data);
+                console.log(stats);
+                displayData(stats);
+
+            }};
+
+
+        let displayData = (stats) =>{
+            let tableRows = '';
+            let tableD = document.querySelector('.row')
+            for (let datas of stats){
+                tableRows += `<tr class="tr">
+                              <td style=font-size:15px;padding: 20px;; ">${datas.country}</td>
+                              <td style="font-size:15px;padding: 20px;">${datas.cases}</td>
+                              <td style="font-size:15px;padding: 20px;">${datas.todayCases}</td>
+                              <td style="font-size:15px;padding: 20px;">${datas.deaths}</td>
+                              <td style="font-size:15px;padding: 20px;">${datas.recovered}</td>
+                              <td style="font-size:15px;padding: 20px;">${datas.active}</td>
+
+
+                                  </tr>`
+            };
+            tableD.innerHTML = tableRows;
+
+
+
+
+        };
+
+</script>
+
+<script src="https://www.w3schools.com/lib/w3.js"></script>
+</body>
+</html>
+
+
+
+

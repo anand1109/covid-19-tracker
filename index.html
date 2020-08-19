@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Anton|Black+Han+Sans|Fjalla+One|Lobster|Nunito|Roboto|Rubik|Ubuntu|Sedgwick+Ave|Exo+2|Courgette" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <title>Covid-19 Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="/Favicon.ico">
+</head>
+<body onload="myFunction()">
+
+<!--pre-loader-->
+<div id="loading">
+     <h1 id="tag">Stay Safe And <br> Stay Home</h1>
+
+</div>
+
+
+<!--header section-->
+<div id="header">
+    <h1>India Corona Stats:</h1>
+</div>
+
+<!--image file-->
+<div style="display: inline">
+    <img style="padding: 5px; width: 65px; border:0px solid #454545; margin-top: 7%; margin-bottom: 7%; text-align: center " src="india-f.png" alt="">
+</div>
+
+
+<!--main content-->
+<div class="container">
+
+<div id="b-1"><h2>Coronavirus Cases:</h2>
+
+    <div id="count-1">
+        <span id="count -c" class="case"></span>
+    </div>
+
+</div>
+<div id="g-1"><h2>Active Cases:</h2>
+
+    <div id="count-2">
+        <span id="count -a" class="active"></span>
+    </div>
+
+</div>
+<div id="t-1"><h2>Today Cases:</h2>
+
+    <div id="count-3">
+        <span id="count -t" class="today"></span>
+    </div>
+
+</div>
+    <div id="r-1"><h2>Deaths:</h2>
+
+        <div id="count-4">
+            <span id="count -d" class="death"></span>
+        </div>
+
+    </div>
+<div id="y-1"><h2>Recovered:</h2>
+
+    <div id="count-5">
+        <span id="count -r" class="recovered"></span>
+    </div>
+
+</div>
+</div>
+
+<!--buttons-->
+<div>
+    <a href="world.html"><button id="btn">WORLD CASES</button></a>
+    <a href="state.html"><button id="btn-1">STATE CASES</button></a>
+</div>
+
+
+
+<footer class="main-footer">
+    <h3>Copyright &copy; 2020 , All Rights Reserved</h3>
+    <p>Developed & Maintained By <i class="fas fa-heart " style="color: red"></i> <br>
+        Anand Kumar & Rishabh Kumar
+    </p>
+
+</footer>
+
+<!--external js file-->
+<script src="app.js"></script>
+
+<!--preloader script-->
+<script>
+    let preloader = document.querySelector('#loading');
+
+    function myFunction() {
+
+       setTimeout(function () {
+           preloader.style.display = 'none';
+       }, 2000);
+
+    }
+</script>
+
+</body>
+</html>
