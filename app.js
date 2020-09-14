@@ -1,30 +1,4 @@
-// INDIA API FETCH
-/*async function CovidAPI() {
 
-
-    try {
-        const api_url = 'https://coronavirus-19-api.herokuapp/countries';
-        const response = await fetch(api_url);
-        if (response.status !== 200) {
-            console.log(`Status Code: ${response.status}`);
-            return;
-        }
-        const data = await response.json();
-        const {
-            cases,
-            active,
-            deaths,
-            recovered
-        } = data.find(covid => covid.country === 'India');*/
-
-       /* document.getElementById('count-1').textContent = cases;
-        document.getElementById('count-2').textContent = active;
-        document.getElementById('count-3').textContent = deaths;
-        document.getElementById('count-4').textContent = recovered;*/
-   /* } catch (err) {
-        console.log(`Fetch Error: ${err}`);
-    }
-};
 
 CovidAPI();*/
 
