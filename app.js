@@ -1,6 +1,6 @@
 
 
-CovidAPI();*/
+ /* CovidAPI();*/
 
 let countC = document.querySelector('.case');
 let countA = document.querySelector('.active');
