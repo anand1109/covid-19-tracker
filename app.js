@@ -24,7 +24,7 @@ xhr.onload = () => {
     if (xhr.status === 200){
         let states = xhr.responseText;
         let indiaS = JSON.parse(states);
-         let x = indiaS[3];
+         let x = indiaS[2];
         console.log(x)
         countC.innerText = `${x.cases}`;
         countA.innerText = `${x.active}`;
